@@ -5,3 +5,18 @@
 .story{padding:25px 28px 32px}
 .author-gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0 32px}.author-gallery img{width:100%;max-height:390px;object-fit:cover;object-position:center 32%;display:block;background:#eee}.author-gallery figcaption{font-size:12px;color:#686662;margin-top:8px}.author-feature{display:grid;grid-template-columns:minmax(160px,.7fr) 1.3fr;gap:45px;align-items:center}.author-feature img{width:100%;max-height:400px;object-fit:cover}.author-feature p{font-size:19px}
 @media(max-width:800px){.story-illustration{height:270px}.author-feature{grid-template-columns:1fr}.author-gallery{grid-template-columns:1fr 1fr;gap:10px}.author-gallery img{max-height:260px}}
+
+/* Portraits auteur : plein espace, sans marges implicites des figures */
+.author-gallery figure { margin:0; min-width:0; }
+.author-gallery { gap:28px; align-items:start; }
+.author-gallery img { width:100%; height:460px; max-height:none; object-fit:cover; object-position:center 30%; border-radius:3px; }
+.author-gallery figcaption { font-size:14px; margin-top:12px; }
+.author-feature img { display:block; width:100%; max-height:none; height:auto; border-radius:3px; }
+@media (max-width:800px) {
+  .author-gallery { grid-template-columns:1fr; gap:30px; }
+  .author-gallery figure { width:100%; margin:0; }
+  .author-gallery img { height:auto; max-height:none; object-fit:contain; }
+  .author-gallery figcaption { font-size:14px; }
+  .author-feature { gap:24px; }
+  .author-feature img { width:100%; height:auto; }
+}
