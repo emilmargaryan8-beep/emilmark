@@ -117,3 +117,12 @@ footer{background:#10251d;color:#dfd5c2}
 dialog{background:#f4ecdd;color:#243a2e}
 dialog .dialog-note{color:#6b695e}
 @media(max-width:800px){.topbar nav,.topbar nav.open{background:#193027;border-bottom-color:#597062}.hero{padding-top:52px}.story-illustration{height:260px}}
+
+/* Parution Amazon : bouton or patiné, lisible et tactile */
+.amazon-hero,.amazon-buy{display:inline-flex;align-items:center;justify-content:center;text-align:center;background:#c7a36c!important;color:#182e25!important;border:1px solid #e0c48f!important;border-radius:5px;font-size:14px;font-weight:700;letter-spacing:.025em;line-height:1.45;padding:15px 21px;box-shadow:0 9px 24px #06190e44;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.amazon-hero:hover,.amazon-buy:hover{background:#ead19c!important;box-shadow:0 12px 26px #06190e66;transform:translateY(-2px)}
+.amazon-hero:focus-visible,.amazon-buy:focus-visible{outline:3px solid #fff1cf;outline-offset:4px}
+.amazon-hero{margin:23px auto 0;max-width:100%;text-decoration:none}
+.amazon-buy{margin-top:16px}
+.hero-art small{margin-top:17px}
+@media(max-width:800px){.amazon-hero{width:100%;max-width:390px}.amazon-buy{max-width:100%}}
