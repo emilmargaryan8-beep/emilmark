@@ -6,17 +6,74 @@
 .author-gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0 32px}.author-gallery img{width:100%;max-height:390px;object-fit:cover;object-position:center 32%;display:block;background:#eee}.author-gallery figcaption{font-size:12px;color:#686662;margin-top:8px}.author-feature{display:grid;grid-template-columns:minmax(160px,.7fr) 1.3fr;gap:45px;align-items:center}.author-feature img{width:100%;max-height:400px;object-fit:cover}.author-feature p{font-size:19px}
 @media(max-width:800px){.story-illustration{height:270px}.author-feature{grid-template-columns:1fr}.author-gallery{grid-template-columns:1fr 1fr;gap:10px}.author-gallery img{max-height:260px}}
 
-/* Portraits auteur : plein espace, sans marges implicites des figures */
-.author-gallery figure { margin:0; min-width:0; }
-.author-gallery { gap:28px; align-items:start; }
-.author-gallery img { width:100%; height:460px; max-height:none; object-fit:cover; object-position:center 30%; border-radius:3px; }
-.author-gallery figcaption { font-size:14px; margin-top:12px; }
-.author-feature img { display:block; width:100%; max-height:none; height:auto; border-radius:3px; }
-@media (max-width:800px) {
-  .author-gallery { grid-template-columns:1fr; gap:30px; }
-  .author-gallery figure { width:100%; margin:0; }
-  .author-gallery img { height:auto; max-height:none; object-fit:contain; }
-  .author-gallery figcaption { font-size:14px; }
-  .author-feature { gap:24px; }
-  .author-feature img { width:100%; height:auto; }
+/* Corrections visuelles - portraits et couverture : iPhone et desktop */
+.cover-wrap { width: min(100%, 390px); max-width: 390px; margin: 0 auto; transform: none; box-shadow: 0 22px 46px rgba(0,0,0,.3); }
+.cover-wrap img { width:100%; height:auto; display:block; }
+.hero { gap: 5%; }
+.hero-art small { line-height: 1.5; }
+.author-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(18px,4vw,42px); max-width: 880px; margin: 24px auto 54px; align-items:start; }
+.author-gallery figure { margin:0; width:100%; min-width:0; }
+.author-gallery img { width:100%; height: min(47vw,480px); max-height:none; object-fit:cover; object-position:center 25%; border-radius: 3px; }
+.author-gallery figcaption { font-size: 13px; line-height: 1.45; margin-top: 12px; }
+.author-feature { grid-template-columns: minmax(0, 0.95fr) minmax(0,1.05fr); }
+.author-feature img { display:block; width:100%; height:auto; max-height:550px; object-fit:contain; object-position:center; border-radius:3px; }
+@media(max-width:800px) {
+ .hero { gap: 35px; padding-top:50px; padding-bottom:55px; }
+ .hero h1 { font-size: clamp(54px, 11vw, 72px); }
+ .cover-wrap { width:min(88vw, 350px); max-width:none; }
+ .hero-art small { margin-top:15px; }
+ .author-gallery { grid-template-columns:1fr; gap:30px; width: min(100%,440px); margin: 12px auto 48px; }
+ .author-gallery img { width:100%; height:auto; max-height: 510px; object-fit:contain; object-position:center; background: transparent; }
+ .author-gallery figcaption { margin: 8px 0 0; }
+ .author-feature { grid-template-columns:1fr; gap:25px; }
+ .author-feature img { width: min(100%,430px); max-height: 520px; margin:0 auto; object-fit:contain; }
+}
+
+
+/* ÉDITION ÉLÉGANCE — tons papier, encres et gravures */
+:root {--ink:#29322e;--light:#f1e9db;--paper:#e9deca;--red:#98583b;--dark:#263530;}
+body{background:#f1e9db;color:#29322e}
+.topbar{background:rgba(244,237,225,.97);border-bottom:1px solid #cfc1ad;box-shadow:0 3px 14px rgba(51,41,30,.05)}
+.topbar nav{background-color:transparent}
+.brand{color:#28342e}
+.hero{background:linear-gradient(135deg,#253630 0%,#30433b 68%,#3e4b3f 100%);color:#faf3e8;min-height:unset}
+.hero h1 em{color:#e8ceb0}.hero .lede{color:#e3dfd4}
+.hero-art .cover-wrap{background:#dfd3bb;padding:10px;box-shadow:0 28px 55px rgba(0,0,0,.35);border-radius:2px}
+.hero-art small{color:#e2d3bf}
+.block{border-top:1px solid rgba(104,86,62,.13)}
+.book-section{background:#f2eadc}.book-grid{gap:7%}
+.quotation{background:#e7dac4;border-left:3px solid #9c7355;box-shadow:0 12px 30px rgba(77,56,31,.06)}
+.stories{background:#e9dfcf}
+.stories .intro,.story p{color:#5e6258}
+.story-grid{background:#cabcaa;border-color:#cabcaa;gap:12px;border:0}
+.story{background:#f4eee2;border:1px solid #dacbb5;box-shadow:0 10px 22px rgba(67,51,35,.055);padding:22px 23px 30px}
+.story-illustration{width:100%;height:300px;padding:12px;object-fit:contain;background:#eee8dd;border:1px solid #d6c9b7;box-shadow:inset 0 0 0 6px #f5efe4;filter:contrast(1.15)}
+.story h3{color:#27382f}
+.story button{color:#8c4f37;border-color:#9d765d}
+.about{background:#f1e9db}.news{background:#e7dbc8}.contact{background:#f1e9db}
+.translation{background:#263530}
+.author-gallery{max-width:980px;gap:26px}
+.author-gallery figure{padding:10px;background:#e8ddcd;border:1px solid #d3c4af;box-shadow:0 14px 26px rgba(38,35,26,.1)}
+.author-gallery img{display:block;height:430px;object-fit:cover;object-position:center 28%;background:#e8ddcd}
+.author-gallery figcaption{color:#525e52;padding:3px 5px}
+.author-feature img{width:100%;max-height:540px;object-fit:cover;object-position:center;background:#23312c;border:7px solid #dfd4c2;box-shadow:0 14px 30px #0003}
+.status{color:#685f50}
+.button{border-color:#86523b;color:#86523b}
+.contact .email{color:#895137}
+footer{background:#263530}
+dialog{background:#f5eddf}
+@media(max-width:800px){
+ .hero{padding:48px 6% 55px;gap:32px}
+ .hero h1{font-size:clamp(50px,10vw,67px);margin-bottom:18px}
+ .hero .lede{font-size:17px}
+ .cover-wrap{width:min(87vw,390px)}
+ .block{padding:64px 6%}
+ .story-grid{gap:16px}
+ .story{padding:17px 18px 27px}
+ .story-illustration{height:260px}
+ .author-gallery{grid-template-columns:1fr;max-width:460px;gap:25px;margin:10px auto 40px}
+ .author-gallery img{height:auto;max-height:none;object-fit:contain}
+ .author-feature img{width:100%;max-width:460px;height:auto;max-height:none;object-fit:contain}
+ .topbar nav{background:#f1e9db}
+ .quotation{padding:30px}
 }
